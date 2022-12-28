@@ -40,7 +40,7 @@ export default function FolderTypeElement(props: FolderProps) {
         'transition-all duration-200 ease-out',
         'hover:bg-slate-200'
       )}
-      draggable
+      // draggable
       onDragStart={() => {
         handleOndrag(id)
       }}

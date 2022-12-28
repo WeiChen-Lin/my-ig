@@ -10,6 +10,8 @@ import useDrag from 'hooks/disk/useDrag'
 
 import { FileType } from 'hooks/disk/type'
 
+import SelectionArea from '../../react/src'
+
 export default function Disk() {
   const { listMethod, handleListMethod, data } = useDisk()
 
@@ -34,15 +36,22 @@ export default function Disk() {
       <Search />
       <Sort listMethod={listMethod} handleListMethod={handleListMethod} />
       <div className='grow overflow-y-auto'>
-        <Files
-          listMethod={listMethod}
-          isOnDrag={isOnDrag}
-          files={files}
-          folders={folders}
-          handleOndrag={() => handleOndrag(FileType.Folder)}
-          handleDragEnter={handleDragEnter}
-          handleDragEnd={handleDragEnd}
-        />
+        <SelectionArea
+          className='grow overflow-y-auto'
+          onStart={() => console.log('test start')}
+          onMove={() => console.log('test move')}
+          selectables='.selectable'
+        >
+          <Files
+            listMethod={listMethod}
+            isOnDrag={isOnDrag}
+            files={files}
+            folders={folders}
+            handleOndrag={() => handleOndrag(FileType.Folder)}
+            handleDragEnter={handleDragEnter}
+            handleDragEnd={handleDragEnd}
+          />
+        </SelectionArea>
       </div>
       <Operator
         toogleCreateFolder={toogleCreateFolder}

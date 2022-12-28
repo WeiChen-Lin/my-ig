@@ -33,3 +33,10 @@
     transform: rotate(360deg);
   }
 }
+
+.selection-area {
+  background: rgba(46, 115, 252, 0.11);
+  border: 2px solid rgba(92, 94, 97, 0.81);
+  border-radius: 0.1em;
+  border-style: dashed;
+}

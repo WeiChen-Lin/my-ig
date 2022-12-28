@@ -23,8 +23,9 @@ export default function useDrag(data: DiskData[]) {
     setDragType(0)
 
     if (dragType === FileType.Folder) {
-      const newFolders = folders.map( folder => {
-        if(folder.id !== e)
+      const newFolders = folders.map((folder) => {
+        if (folder.id !== e) {
+        }
       })
     }
   }
